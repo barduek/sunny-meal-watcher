@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mapa 3D de Palermo para ver dónde pega el sol según la fecha y la hora."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>"
+    />
+    <title>Sunny Meal Watcher</title>
+  </head>
+  <body>
+    <main id="map" aria-label="Mapa 3D con edificios, sombras y la posición del sol"></main>
+
+    <section class="panel" aria-labelledby="app-title">
+      <h1 id="app-title" class="panel__title"><span aria-hidden="true">☀️</span> Sunny Meal Watcher</h1>
+      <p id="area-name" class="panel__subtitle">Palermo, Buenos Aires</p>
+
+      <div class="panel__row">
+        <label class="field" for="date-input">
+          <span class="field__label">Fecha</span>
+          <input id="date-input" type="date" required disabled />
+        </label>
+        <p id="clock" class="clock" aria-hidden="true">--:--</p>
+      </div>
+
+      <label class="field field--slider" for="time-input">
+        <span class="field__label">Hora (hora local de la zona)</span>
+        <input id="time-input" type="range" min="0" max="1435" step="5" value="720" disabled />
+      </label>
+      <div class="slider-scale" aria-hidden="true">
+        <span>0 h</span><span>6 h</span><span>12 h</span><span>18 h</span><span>24 h</span>
+      </div>
+
+      <p id="sun-info" class="sun-info">El sol aparece cuando termina de cargar el mapa.</p>
+      <p id="sun-times" class="sun-times"></p>
+
+      <ul class="legend" aria-label="Referencias del mapa">
+        <li><span class="swatch swatch--building" aria-hidden="true"></span>Edificio</li>
+        <li><span class="swatch swatch--shadow" aria-hidden="true"></span>Sombra</li>
+        <li><span class="swatch swatch--sun" aria-hidden="true"></span>Sol y su recorrido del día</li>
+      </ul>
+      <p id="data-note" class="data-note"></p>
+      <p id="status" class="status" role="status">Cargando mapa y edificios…</p>
+    </section>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

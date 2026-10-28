@@ -1,0 +1,31 @@
+{
+  "name": "sunny-meal-watcher",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc && tsc -p scripts",
+    "test": "vitest run",
+    "fetch:buildings": "tsx scripts/fetch-buildings-gcba.ts",
+    "fetch:buildings:osm": "tsx scripts/fetch-buildings-osm.ts"
+  },
+  "dependencies": {
+    "earcut": "3.2.3",
+    "maplibre-gl": "6.11.2",
+    "suncalc": "2.0.2"
+  },
+  "devDependencies": {
+    "@types/geojson": "7946.0.16",
+    "@types/node": "20.19.43",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "6.4.3",
+    "vitest": "4.1.11"
+  }
+}
